@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <article class="todo-card" data-testid="test-todo-card">
+
+
+
+        <!--Header-->
+        <div id="todoView">
+            <div class="todo-header">
+                <input type="checkbox" id="doneCheckbox" data-testid="test-todo-complete-toggle" aria-labelledby="todo-label"/>
+                <label for="todo-complete" class="visually-hidden" id="todo-label">
+                 Mark task as todo-complete
+                </label>
+                
+                    <select class="status" data-testid="test-todo-status-control" id="statusControl">
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Done</option>
+                    </select>
+                    <span data-testid="test-todo-status"></span>
+            </div>
+
+            <!--Title-->
+            <h2 class="todo-title" data-testid="test-todo-title">
+                Build a premium Todo card UI
+            </h2>
+
+            <!--Description-->
+            <div class="todo-description" data-testid="test-todo-collapsible-section" id="descBox">
+                Create a clean, modern, and accessible todo card component using HTML, CSS and Javascript.
+            </div>
+
+            <button data-testid="test-todo-expand-toggle" id="toggleBtn" aria-expanded="false"aria-controls="descBox">
+                Show more
+            </button>
+            
+
+            <!--Meta info-->
+            <div class="todo-meta">
+             <span class="priority high" data-testid="test-todo-priority">
+                 High
+             </span>
+             <span  data-testid="test-todo-priority-indicator" id="priorityIndicator">
+             </span>
+                <time class="due-date" datetime="2026-04-16T00:00:00" data-testid="test-todo-due-date">
+                    Due April 16, 2026
+                </time>
+            </div>
+
+            <!--Time Remaining-->
+            <p class="time-remaining" data-testid="test-todo-time-remaining">
+            </p>
+            <div data-testid="test-todo-overdue-indicator" id="timeDisplay" aria-live="polite"></div>
+
+            <!--Tags-->
+         <ul class="tags" data-testid="test-todo-tags" role="list">
+                <li data-testid="test-todo-tag-work">Work</li>
+                <li data-testid="test-todo-tag-urgent">Urgent</li>
+                <li>Design</li>
+         </ul>
+
+            <!--Actions-->
+            <div class="actions">
+                <button id="editBtn" data-testid="test-todo-edit-button" type="button">Edit</button>
+                <button data-testid="test-todo-delete-button">Delete</button>
+            </div>
+     </div>
+
+     <form data-testid="test-todo-edit-form" id="editForm"  style="display:none;">
+
+            <label for="editTitle">Title</label>
+            <input id="editTitle" data-testid="test-todo-edit-title-input" />
+
+            <label for="editDesc">Description</label>
+            <textarea id="editDesc" data-testid="test-todo-edit-description-input"></textarea>
+
+         <label for="editPriority">Priority</label>
+            <select id="editPriority" data-testid="test-todo-edit-priority-select">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <label for="editDate">Due Date</label>
+            <input type="date" id="editDate" data-testid="test-todo-edit-due-date-input" />
+
+             <button type="button" id="saveBtn" data-testid="test-todo-save-button">Save</button>
+             <button type="button" id="cancelBtn" data-testid="test-todo-cancel-button">Cancel</button>
+
+     </form>
+        </article>
+        
+
+    </main>
+    <script src ="script.js"></script>
+    
+</body>
+</html>
